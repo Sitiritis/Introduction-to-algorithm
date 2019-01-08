@@ -1,0 +1,21 @@
+# Visual Studio generated files
+*.vcxproj.user
+
+# Visual Studio generated folders
+.vs/
+
+# Build folders
+Debug/
+
+# Build files
+*.ilk
+*.obj
+*.pch
+*.pdb
+*.idb
+*.exe
+*.tlog
+*.lastbuildstate
+
+# Logging
+*.log
