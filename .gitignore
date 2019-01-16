@@ -6,6 +6,9 @@
 
 # Build folders
 Debug/
+Release/
+bin/
+obj/
 
 # Build files
 *.ilk
