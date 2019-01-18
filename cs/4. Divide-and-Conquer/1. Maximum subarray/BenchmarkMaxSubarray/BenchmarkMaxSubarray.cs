@@ -96,25 +96,25 @@ namespace BenchmarkMaxSubarray
 
     //[Benchmark]
     //[ArgumentsSource(nameof(generateArrays))]
-    //public (int lowMaxIdx, int highMaxIdx, long totalSum)
-    //  maximumSubarrayDivideNConquer
-    // (IList<long> inArr)
-    //{
-    //  //List<long> inArr = new List<long> { 13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7 };
+    public (int lowMaxIdx, int highMaxIdx, long totalSum)
+      maximumSubarrayDivideNConquer
+     (IList<long> inArr)
+    {
+      //List<long> inArr = new List<long> { 13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7 };
 
-    //  return MaximumSubarray.maximumSubarrayDivideNConquer(inArr);
-    //}
+      return MaximumSubarray.maximumSubarrayDivideNConquer(inArr);
+    }
 
     //[Benchmark]
     //[ArgumentsSource(nameof(generateArrays))]
-    //public (int lowMaxIdx, int highMaxIdx, long totalSum)
-    // maximumSubarrayBruteForce
-    // (IList<long> inArr)
-    //{
-    //  //List<long> inArr = new List<long> { 13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7 };
+    public (int lowMaxIdx, int highMaxIdx, long totalSum)
+     maximumSubarrayBruteForce
+     (IList<long> inArr)
+    {
+      //List<long> inArr = new List<long> { 13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7 };
 
-    //  return MaximumSubarray.maximumSubarrayBruteForce(inArr);
-    //}
+      return MaximumSubarray.maximumSubarrayBruteForce(inArr);
+    }
 
     [Benchmark]
     [ArgumentsSource(nameof(generateArrays))]
@@ -125,6 +125,17 @@ namespace BenchmarkMaxSubarray
       //List<long> inArr = new List<long> { 13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7 };
 
       return MaximumSubarray.maximumSubarrayHybrid(inArr);
+    }
+
+    [Benchmark]
+    [ArgumentsSource(nameof(generateArrays))]
+    public (int lowMaxIdx, int highMaxIdx, long totalSum)
+     maximumSubarrayDynamic
+     (IList<long> inArr)
+    {
+      //List<long> inArr = new List<long> { 13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7 };
+
+      return MaximumSubarray.maximumSubarrayDynamic(inArr);
     }
   }
 }

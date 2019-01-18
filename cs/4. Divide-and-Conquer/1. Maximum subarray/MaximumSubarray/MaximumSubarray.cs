@@ -258,5 +258,45 @@ namespace IntroductionToAlgorithms
 
       return maximumSubarrayHybridRecur(inArr, 0, inArr.Count - 1);
     }
+
+    // Kadane's algorithm
+    public static (int lowMaxIdx, int highMaxIdx, long totalSum)
+      maximumSubarrayDynamic
+      (IList<long> inArr)
+    {
+      #region Preconditions
+      if (inArr.Count == 0)
+      {
+          throw new ArgumentException("The array cannot be empty");
+      }
+      #endregion // Pretconditions
+
+      #region Logic
+      int lowMaxIdx = 0, highMaxIdx = 0, runningLowMaxIdx = 0;
+      long maxSum = inArr[0], runningMaxSum = inArr[0];
+
+      for (int i = 1; i < inArr.Count; ++i)
+      {
+        if (runningMaxSum > 0)
+        {
+          runningMaxSum += inArr[i];
+        }
+        else
+        {
+          runningLowMaxIdx = i;
+          runningMaxSum = inArr[i];
+        }
+
+        if (runningMaxSum > maxSum)
+        {
+          lowMaxIdx = runningLowMaxIdx;
+          highMaxIdx = i;
+          maxSum = runningMaxSum;
+        }
+      }
+
+      return (lowMaxIdx, highMaxIdx, maxSum);
+      #endregion
+    }
   }
 }

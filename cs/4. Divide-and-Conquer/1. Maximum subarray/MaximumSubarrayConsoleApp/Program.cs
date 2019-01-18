@@ -9,6 +9,8 @@ namespace MaximumSubarrayConsoleApp
     static void Main(string[] args)
     {
       List<long> arr = new List<long> { 13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7 };
+      //List<long> arr = new List<long> { 13, 3, 25, 20, 3, 16, 23, 18, 20, 7, 12, 5, 22, 15, 4, 7 };
+      //List<long> arr = new List<long> { -13, -3, -25, -20, -3, -16, -23, -18, -20, -7, -12, -5, -22, -15, -4, -7 };
 
       var maxSubarrayDnC = MaximumSubarray.maximumSubarrayDivideNConquer(arr);
       Console.WriteLine("Divide-n-Conquer\nLow index = {0}\nHigh index = {1}\nSum = {2}\n",
@@ -23,6 +25,11 @@ namespace MaximumSubarrayConsoleApp
       var maxSubarrayHybrid = MaximumSubarray.maximumSubarrayHybrid(arr);
       Console.WriteLine("Hybrid\nLow index = {0}\nHigh index = {1}\nSum = {2}\n",
         maxSubarrayHybrid.lowMaxIdx, maxSubarrayHybrid.highMaxIdx, maxSubarrayHybrid.totalSum
+      );
+
+      var maxSubarrayDynamic = MaximumSubarray.maximumSubarrayDynamic(arr);
+      Console.WriteLine("Dynamic programming (Kadane's algorithm)\nLow index = {0}\nHigh index = {1}\nSum = {2}\n",
+        maxSubarrayDynamic.lowMaxIdx, maxSubarrayDynamic.highMaxIdx, maxSubarrayDynamic.totalSum
       );
 
       Console.ReadKey();
